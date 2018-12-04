@@ -1,0 +1,35 @@
+<div class="row">
+    
+    <div class="col-md-12">
+        
+        <div class="row">
+            <table class="table table-condensed">
+                    <thead>
+                        <label><h2>Meus Heróis</h2></label>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                        </tr>
+                        <tr class="teste" *ngFor="let estudante of estudantes" [class.selected]="teste === estudanteSelecionado">
+                            <td><a routerLink='/detalhe/{{estudante.id}}'>{{estudante.id}}</a>
+                            </td>
+                            <td>{{estudante.nome}}</td>
+                        </tr>
+                    </thead>
+                    
+                </table>
+        </div>
+
+        <!--<div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-left">Detalhes do {{estudanteSelecionado.nome | uppercase}} </h2>   
+            </div>    
+        </div> -->
+       <!-- <app-estudante-detalhe [estudante] = "estudanteSelecionado"></app-estudante-detalhe> -->
+    </div>
+   
+</div>
+
+    
+
+
