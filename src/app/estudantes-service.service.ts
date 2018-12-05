@@ -11,9 +11,9 @@ export class EstudantesServiceService {
   getEstudantes(): Observable<Estudante[]>{
     return of(ESTUDANTES);
   }
-  
+
   getEstudante(id: number): Observable<Estudante> {
-    return of(ESTUDANTES.find(estudante => estudante.id === id));
+    return of(ESTUDANTES.find(Estudante => Estudante.id === id));
   }
 
   constructor() { }
