@@ -4,6 +4,7 @@ import { EstudantesServiceService } from '../estudantes-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-estudante-detalhe',
   templateUrl: './estudante-detalhe.component.html',

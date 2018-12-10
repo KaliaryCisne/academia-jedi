@@ -7,7 +7,9 @@ import { EstudantesComponent } from './estudantes/estudantes.component';
 import { EstudanteDetalheComponent } from './estudante-detalhe/estudante-detalhe.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PainelComponent } from './painel/painel.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { PainelComponent } from './painel/painel.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
