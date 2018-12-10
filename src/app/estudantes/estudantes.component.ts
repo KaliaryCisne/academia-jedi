@@ -11,25 +11,36 @@ import { EstudantesServiceService } from '../estudantes-service.service';
 export class EstudantesComponent implements OnInit {
 
   estudantes: Estudante[];
-
-  // estudanteSelecionado: Estudante = {
-  //   id: 1,
-  //   nome: 'estudante1',
-  //   isJedi: false,
-  //   templo: null
-  // }
-
-  // onSelect(estudante: Estudante){
-  //   this.estudanteSelecionado = estudante;
-  // }
-
   
   constructor(private estudanteService: EstudantesServiceService) {}
 
+  //Captura um recebe de estudantes
   getEstudantes():void {
     this.estudanteService.getEstudantes()
       .subscribe(estudantes => this.estudantes = estudantes);
-  }  
+  }
+  
+  //Adiciona um novo estudante
+  adicionar(nome: String, isJedi: boolean, templo: String): void {
+    nome = nome.trim();
+    if (!nome) {
+      this.mensagem('Nome é obrigatório');
+      return;
+    }
+    if (!isJedi) {
+      this.mensagem('Campo Jedi obrigatório');
+      return;
+    }
+    this.estudanteService.adicionarEstudante({ nome, isJedi, templo } as Estudante)
+      .subscribe(estudante => {
+        this.estudantes.push(estudante);
+      });
+  }
+  
+  //Método notifica
+  mensagem(mensagem: string): void {
+    alert(mensagem);
+  }
 
   ngOnInit() {
     this.getEstudantes();

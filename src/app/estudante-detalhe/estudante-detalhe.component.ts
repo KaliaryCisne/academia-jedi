@@ -31,5 +31,9 @@ export class EstudanteDetalheComponent implements OnInit {
   voltar(): void{
     this.location.back();
   }
+  salvar():void{
+    this.estudanteService.atualizarEstudante(this.estudante)
+      .subscribe(() => this.voltar);
+  }
 
 }
