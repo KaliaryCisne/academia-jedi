@@ -1,0 +1,13 @@
+<form>
+    <div class="form-group" id="search-component">
+        <h4>Busca de estudantes</h4>
+        <input #caixaBusca id="search-box" (input)="buscar(caixaBusca.value)" />
+        <ul class="search-result">
+          <li *ngFor="let estudante of estudantes$ | async">
+            <a routerLink="/detalhe/{{estudante.id}}">
+              {{estudante.nome}}
+            </a>
+          </li>
+        </ul>
+      </div>
+</form>

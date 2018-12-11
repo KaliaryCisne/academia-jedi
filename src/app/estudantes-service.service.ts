@@ -63,6 +63,28 @@ export class EstudantesServiceService {
     );
   }
 
+  //DELETE: Remove um estudante do servidor
+  removerEstudante(estudante: Estudante | number ): Observable<Estudante>{
+    const id = typeof estudante === 'number' ? estudante: estudante.id;
+    const url = `${this.estudantesUrl}/${id}`;
+
+    return this.http.delete<Estudante>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`Removido o estudante com ID=${id}`)),
+      catchError(this.trataErro<Estudante>('removeEstudante'))
+    );
+  }
+  // GET estudantes cujo nome contém o termo de pesquisa
+  buscaEstudantes(termo: string): Observable<Estudante[]> {
+    if (!termo.trim()) {
+      // se nenhum termo de pesquisa, retorna array de heróis vazio.
+      return of([]);
+    }
+    return this.http.get<Estudante[]>(`${this.estudantesUrl}/?nome=${termo}`).pipe(
+      tap(_ => this.log(`encontrados estudantes compatíveis com "${termo}"`)),
+      catchError(this.trataErro<Estudante[]>('buscaEstudantes', []))
+    );
+  }
+
   constructor(private http: HttpClient,
     private inMemoryService: InMemoryDataService) { }
 }

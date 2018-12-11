@@ -3,17 +3,18 @@
         <div class="row">
             <table class="table table-condensed">
                 <thead>
-                    <label>
-                        <h2>Lista de estudantes</h2>
-                    </label>
+                    <label><h2>Lista de estudantes</h2></label>
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
+                        <th>Opções</th>
                     </tr>
                     <tr class="teste" *ngFor="let estudante of estudantes" routerLink='/detalhe/{{estudante.id}}'>
-                        <td><a>{{estudante.id}}</a>
-                        </td>
+                        <td><a>{{estudante.id}}</a></td>
                         <td>{{estudante.nome}}</td>
+                        <td>
+                            <button class="delete" title="Remove estudante" (click)="remover(estudante)">Deletar</button>
+                        </td>
                     </tr>
                 </thead>
             </table>
@@ -23,24 +24,23 @@
 <!-- Adiciona um novo Estudante -->
 <form>
     <div class="row">
-        <div class="column">
-
-            <label>Nome do Estudante:
-                <input #nome placeholder="Nome" />
+        <div class="col">
+            <label>Estudante:
+                <input #nome placeholder="Nome do estudante"/>
             </label>
         </div>
-        <div class="column">
+        <div class="col">
             <label>É Jedi?
-                <input #isJedi placeholder="é Jedi" />
+                <input #isJedi placeholder="Estudante é um Jedi?(true/false)"/>
             </label>
         </div>
-        <div class="column">
+        <div class="col">
             <label>Templo:
-                <input #templo placeholder="templo" />
+                <input #templo placeholder="nome do templo"/>
             </label>
         </div>
-        <div class="column">
-            <button (click)="adicionar(nome.value, isJedi.value, templo.value); ">Adicionar</button>
+        <div class="col">
+            <button (click)="adicionar(nome.value, isJedi.value, templo.value); nome.value='';isJedi.value='';templo.value=''; ">Adicionar</button>
         </div>
     </div>
 </form>

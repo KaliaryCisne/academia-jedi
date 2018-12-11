@@ -33,7 +33,7 @@ export class EstudanteDetalheComponent implements OnInit {
   }
   salvar():void{
     this.estudanteService.atualizarEstudante(this.estudante)
-      .subscribe(() => this.voltar);
+      .subscribe(() => this.voltar());
   }
 
 }

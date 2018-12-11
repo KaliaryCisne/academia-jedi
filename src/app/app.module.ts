@@ -10,12 +10,14 @@ import { PainelComponent } from './painel/painel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { BuscaEstudanteComponent } from './busca-estudante/busca-estudante.component';
 @NgModule({
   declarations: [
     AppComponent,
     EstudantesComponent,
     EstudanteDetalheComponent,
-    PainelComponent
+    PainelComponent,
+    BuscaEstudanteComponent
   ],
   imports: [
     BrowserModule,
