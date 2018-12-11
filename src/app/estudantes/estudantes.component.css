@@ -2,17 +2,11 @@
     background-color: rgb(43, 223, 148) ;
     color: white;
     }
-    /* .table-success {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 15em;
-    } */
     .teste{
     cursor: pointer;
     position: relative;
     left: 0;
-    background-color: rgb(179, 100, 126);
+    background-color: rgb(108, 194, 216);
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
@@ -24,7 +18,7 @@
     }
     .teste:hover {
     color: rgb(14, 23, 100);
-    background-color: rgb(26, 197, 219);
+    background-color: rgb(135, 238, 94);
     left: .1em;
     }
     .teste tr{
@@ -45,22 +39,3 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
     }
-    /* button {
-        background-color: #eee;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        cursor: hand;
-        font-family: Arial;
-        }
-        button:hover {
-        background-color: #cfd8dc;
-        }
-        button.delete {
-        position: relative;
-        left: 194px;
-        top: -32px;
-        background-color: gray !important;
-        color: white;
-        } */

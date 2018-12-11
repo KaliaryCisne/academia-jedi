@@ -1,13 +1,29 @@
-<form>
-    <div class="form-group" id="search-component">
-        <h4>Busca de estudantes</h4>
-        <input #caixaBusca id="search-box" (input)="buscar(caixaBusca.value)" />
-        <ul class="search-result">
-          <li *ngFor="let estudante of estudantes$ | async">
-            <a routerLink="/detalhe/{{estudante.id}}">
-              {{estudante.nome}}
-            </a>
-          </li>
-        </ul>
+<div class="container">
+    <h4>Busca de estudantes</h4>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Nome</span>
       </div>
-</form>
+      <input #caixaBusca type="text" class="form-control" placeholder="Nome do estudante" aria-label="Nome" aria-describedby="basic-addon1"
+        id="search-box" (input)="buscar(caixaBusca.value)">
+    </div>
+    
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nome: </th>
+          <th>Id:</th>
+          <th>isjedi:</th>
+          <th>Templo:</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let estudante of estudantes$ | async" routerLink="/detalhe/{{estudante.id}}">
+            <td>{{estudante.nome}}</td>
+            <td>{{estudante.id}}</td>
+            <td>{{estudante.isJedi}}</td>
+            <td>{{estudante.templo}}</td>
+          </tr>
+      </tbody>
+    </table>
+</div>

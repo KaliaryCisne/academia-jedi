@@ -1,9 +1,15 @@
 <h3>Ranking Jedi</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let estudante of estudantes" class="col-1-5" routerLink="/detalhe/{{estudante.id}}">
-    <div class="module estudante">
-      <h4>{{estudante.nome}}</h4>
-    </div>
-  </a>
+<div class="container">
+  <div class="row">
+      <div class="grid grid-pad">
+          <a *ngFor="let estudante of estudantes" class="col-1-5" routerLink="/detalhe/{{estudante.id}}">
+            <div class="module estudante">
+              <h4>{{estudante.nome}}</h4>
+            </div>
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <app-busca-estudante></app-busca-estudante>
+  </div>
 </div>
-<app-busca-estudante></app-busca-estudante>
